@@ -51,5 +51,5 @@ Pueden usar el script de manera automática incluyéndolo en su `crontab` de usu
 # Explicacion: Ejecuta el script todos los díás a las 10 am, para pedir hora a las 20:00, para dos días más. Solo se reservará la hora si es martes o jueves.
 0 10 * * * /home/deivid/PycharmProjects/smartfit/smartfit_bot.py --usuario <tu_rut> --password <tu_password> --hora "20:00" --horizonte 2 --dias_allowed mar jue
 ```
-
+Puedes incluir varias lineas que invoquen al proceso a diferentes horas/días, para maximizar la probabilidad de alcanzar hora.
 O bien, ingresar una entrada en el programador de tareas de Windows.
