@@ -53,4 +53,4 @@ Pueden usar el script de manera automática incluyéndolo en su `crontab` de usu
 ```
 Puedes incluir varias lineas que invoquen al proceso a diferentes horas/días, para maximizar la probabilidad de alcanzar hora.
 
-Usuarios Windows pueden ingresar una entrada en el Programador de Tareas de Windows.
+Usuarios Windows pueden ingresar una entrada en el Programador de Tareas.
