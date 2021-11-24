@@ -105,19 +105,16 @@ else:
 
         # espera login
 
-        xpath_menu_interno = "//body/div[@class='wrapper']//span[@class='menuRpInterno']"
-        xpath_reservas = "//body/div[@class='wrapper']//ul[@class='menuRp_close']//a[contains(@href, 'https://reservas.smartfit.cl/session/')]"
+        xpath_reservas = "//a[contains(@href, 'https://reservas.smartfit.cl/session/remote_sign_in?')]"
 
         try:
             wait_menu = WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.XPATH, xpath_menu_interno))
+                EC.presence_of_element_located((By.XPATH, xpath_reservas))
             )
 
         finally:
-            driver.find_element(By.XPATH, xpath_menu_interno).click()  # abro menu interno
-
-        link_reserva = driver.find_element(By.XPATH, xpath_reservas).get_attribute('href')
-        driver.get(link_reserva)
+            link_reserva = driver.find_elements(By.XPATH, xpath_reservas)[0].get_attribute('href')
+            driver.get(link_reserva)
 
         # una vez ya logueado, la url de consultas se compone del dia y la url base de abajo
         driver.get('https://reservas.smartfit.cl/klasses?date={}'.format(dia_busqueda_str))
